@@ -1,0 +1,47 @@
+if __name__ == "__main__":
+    print("Diccionario de español a ingles")
+
+    milista = []
+
+    while True:
+        print("\n1. palabras con a")
+        print("2. palabras con b")
+        print("3. eliminar palabras ")
+        print("4. Salir")
+        try:
+            opcion = int(input("Opcion > "))
+        except:
+            opcion = -1
+
+        if opcion == 1:
+            if len(milista) > 0:
+                print(milista)
+                
+            else:
+                print("Arbol en ingles es = tree")   
+        elif opcion == 2:
+            t = input("Barco en ingles es = boats ")
+            milista.append(t)
+            print("agregar mas palabras...")
+        elif opcion == 3:
+            if len(milista) > 0:
+                i = 1
+                for palabra in milista: 
+                    print(str(i) + ". " + palabra)
+                    i += 1
+                try:
+                    te = int(input("Palabra a Eliminar: "))
+                except:
+                    te = -1
+                if te <= len(milista) and te > 0:
+                    del milista[te - 1]
+                    print("Palabras eliminada")
+                else:
+                    print("ERRO:: no hay mas palabras")
+        elif opcion == 4:
+            break
+        else:
+            print("ERROR")
+         
+
+    print("no hay mas palabras!")
